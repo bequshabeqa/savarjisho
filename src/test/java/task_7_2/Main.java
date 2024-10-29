@@ -11,18 +11,21 @@ public class Main {
         NotificationService.sendAlert(smsNotification, "SMS verification alert. ");
 
 
-        emailNotification.sendNotification("email-ის ხარვეზი ");
-        smsNotification.sendNotification("ესაჭიროება შეკეთბა ");
+        System.out.println("with polymorphism ");
+        sendEmailAlert(emailNotification);
+        sendSMSAlert(smsNotification);
+
+    }
+
+    private static void sendEmailAlert(Notification emailNotification) {
+        emailNotification.sendNotification("Email alert. ");
+    }
+    private static void sendSMSAlert(Notification smsNotification) {
+        smsNotification.sendNotification("SMS verification alert. ");
     }
 
     public static void sendAlert(EmailNotification emailNotification) {
         emailNotification.sendNotification();
     }
 
-        public void sendEmailNotification(String service) {
-            System.out.println("snet by email service: " + service);
-        }
-    public void sendSMSNotification(String service) {
-        System.out.println("snet by email service: " + service);
-    }
 }
